@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "qv",
+  "version": "${version}",
+  "name": "QV",
+  "description": "F9 menu: change skin, get 3D guns and knives, toggle nametags with N.",
+  "authors": ["You"],
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.example.qv.QvMod"],
+    "client": ["com.example.qv.QvClient"]
+  },
+  "mixins": [{ "config": "qv.mixins.json", "environment": "client" }],
+  "depends": {
+    "fabricloader": ">=0.19.1",
+    "minecraft": "~26.2",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}

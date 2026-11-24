@@ -1,0 +1,7 @@
+{
+  "required": true,
+  "package": "com.example.qv.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": ["LivingEntityRendererMixin", "EntityRendererMixin", "AbstractClientPlayerMixin"],
+  "injectors": { "defaultRequire": 0 }
+}
