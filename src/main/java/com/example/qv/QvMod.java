@@ -1,7 +1,7 @@
 package com.example.qv;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.world.item.CreativeModeTabs;
 
 public class QvMod implements ModInitializer {
@@ -10,7 +10,7 @@ public class QvMod implements ModInitializer {
     @Override
     public void onInitialize() {
         QvItems.register();
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT)
-                .register(entries -> QvItems.ALL.forEach(entries::accept));
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.COMBAT)
+                .register(output -> QvItems.ALL.forEach(item -> output.accept(item)));
     }
 }
