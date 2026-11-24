@@ -6,7 +6,6 @@ import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import org.lwjgl.glfw.GLFW;
 
@@ -31,16 +30,12 @@ public class QvClient implements ClientModInitializer {
                 toggleNametags(client);
             }
             while (menuKey.consumeClick()) {
-                client.setScreen(new QvScreen());
+                client.gui.setScreen(new QvScreen());
             }
         });
     }
 
     public static void toggleNametags(Minecraft client) {
         nametagsEnabled = !nametagsEnabled;
-        if (client.player != null) {
-            client.player.displayClientMessage(
-                    Component.literal("Nametags: " + (nametagsEnabled ? "ON" : "OFF")), true);
-        }
     }
 }
